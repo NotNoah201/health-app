@@ -12,14 +12,13 @@ class MainWindow(QWidget):
         self.resize(1280, 720)
 
         self.stack = QStackedWidget(self)
-        self.PageOne = PageOne(self.go_to_page2)
+        self.page1 = PageOne(self.go_to_page2)
+        # self.page2 = PageTwo()
 
-        self.stack.addWidget(self.PageOne)
+        self.stack.addWidget(self.page1)
+        # self.stack.addWidget(self.page2)
 
         layout = QVBoxLayout()
-        button_layout = QHBoxLayout()
-
-        layout.addLayout(button_layout)
         layout.addWidget(self.stack)
 
         self.setLayout(layout)
