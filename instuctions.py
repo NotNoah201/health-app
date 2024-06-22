@@ -2,9 +2,11 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QPushButton, QVBoxLayout, QLabel, QHBoxLayout
 
 class PageOne(QWidget):
-    def __init__(self):
+    def __init__(self, on_start_clicked):
         super().__init__()
+        self.on_start_clicked = on_start_clicked
         self.initUI()
+
 
     def initUI(self):
         self.setWindowTitle("Health")
@@ -12,6 +14,8 @@ class PageOne(QWidget):
         self.move(0, 0)
 
         button = QPushButton('Start')
+        button.clicked.connect(self.on_start_clicked)
+        
         text1 = QLabel('Welcome to the Health status detection program!')
         text2 = QLabel("This application allows you to use the Rufier test to make an initial diagnosis of your health.\nThe Rufier test is a set of physical exercises designed to assess your cardiac performance during physical exertion.\nThe subject lies in the supine position for 5 minutes and has their pulse rate measured for 15 seconds;\nthen, within 45 seconds, the subject performs 30 squats.\nWhen the exercise ends, the subject lies down and their pulse is measured again for the first 15 seconds\nand then for the last 15 seconds of the first minute of the recovery period.\nImportant! If you feel unwell during the test (dizziness,\ntinnitus, shortness of breath, etc.), stop the test and consult a physician.")
 

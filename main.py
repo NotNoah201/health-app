@@ -12,7 +12,7 @@ class MainWindow(QWidget):
         self.resize(1280, 720)
 
         self.stack = QStackedWidget(self)
-        self.PageOne = PageOne()
+        self.PageOne = PageOne(self.go_to_page2)
 
         self.stack.addWidget(self.PageOne)
 
@@ -23,6 +23,10 @@ class MainWindow(QWidget):
         layout.addWidget(self.stack)
 
         self.setLayout(layout)
+    
+    def go_to_page2(self):
+        # self.stack.setCurrentWidget(self.page2)
+        print("This would switch to Page 2")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
