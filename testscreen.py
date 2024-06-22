@@ -1,15 +1,23 @@
 #this is for me and jake. test screen.
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
-app = QApplication
+# Step 1: Create a subclass of QMainWindow to set up the main window
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
+        # Set up the window
+        self.setWindowTitle("PyQt5 Basic Window")
+        self.setGeometry(100, 100, 800, 600)  # (x, y, width, height)
 
-main_win = QWidget()
-main_win.resize(1000, 1000)
+# Step 2: Initialize the QApplication
+app = QApplication(sys.argv)
 
+# Step 3: Create an instance of the MainWindow
+window = MainWindow()
+window.show()  # Display the window
 
+# Step 4: Start the event loop
+sys.exit(app.exec_())
 
-
-
-print('test')
