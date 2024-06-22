@@ -28,7 +28,7 @@ class PageOne(QWidget):
                        "tinnitus, shortness of breath, etc.), stop the test and consult a physician.")
 
         self.gif_label = QLabel(self)
-        self.gif_label.setAlignment(Qt.AlignRight | Qt.AlignBottom)
+        self.gif_label.setAlignment(Qt.AlignRight | Qt.AlignTop)
 
 
         self.movie = QMovie(r"C:\Users\mden0\Downloads\icons8-pulse.gif")
