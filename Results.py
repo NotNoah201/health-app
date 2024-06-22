@@ -1,20 +1,20 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QHBoxLayout, QRadioButton
-from testscreen import *
+from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout
 
-app = QApplication([])
-main_window = QWidget()
-main_window.show()
+class PageThree(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
 
-main_window.setWindowTitle("RESULTS")
-main_window.resize(1920, 1080)
-main_window.move(0,0)
+    def initUI(self):
+        self.setWindowTitle("RESULTS")
+        self.resize(1920, 1080)
+        self.move(0, 0)
 
-text1 = QLabel('HEEEELO HOW IS THY')
+        text1 = QLabel('HEEEELO HOW IS THY', self)
+        text1.setAlignment(Qt.AlignCenter)
 
-vertical = QVBoxLayout() 
+        vertical_layout = QVBoxLayout()
+        vertical_layout.addWidget(text1, alignment=Qt.AlignCenter)
 
-vertical.addWidget(text1, alignment = Qt.AlignCenter)
-main_window.setLayout(vertical)
-
-app.exec_()
+        self.setLayout(vertical_layout)
