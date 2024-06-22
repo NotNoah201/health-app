@@ -31,7 +31,7 @@ class PageOne(QWidget):
         self.gif_label.setAlignment(Qt.AlignRight | Qt.AlignTop)
 
 
-        self.movie = QMovie(r"C:\Users\mden0\Downloads\icons8-pulse.gif")
+        self.movie = QMovie("images\icons8-pulse.gif")
         
 
         self.gif_label.setMovie(self.movie)
@@ -60,7 +60,8 @@ class GifPlayer(QWidget):
         self.setGeometry(100, 100, 800, 600)
         self.label = QLabel(self)
         self.label.setAlignment(Qt.AlignCenter)
-        self.movie = QMovie(r"C:\Users\mden0\Downloads\icons8-pulse.gif")
+        gif_path = "./images/icons8-pulse.gif"
+        self.movie = QMovie(gif_path)
         self.label.setMovie(self.movie)
         layout = QVBoxLayout()
         layout.addWidget(self.label)
