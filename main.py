@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget
 import sys
 from instuctions import PageOne
+from testscreen import PageTwo
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -13,10 +14,10 @@ class MainWindow(QWidget):
 
         self.stack = QStackedWidget(self)
         self.page1 = PageOne(self.go_to_page2)
-        # self.page2 = PageTwo()
+        self.page2 = PageTwo()
 
         self.stack.addWidget(self.page1)
-        # self.stack.addWidget(self.page2)
+        self.stack.addWidget(self.page2)
 
         layout = QVBoxLayout()
         layout.addWidget(self.stack)
@@ -24,8 +25,7 @@ class MainWindow(QWidget):
         self.setLayout(layout)
     
     def go_to_page2(self):
-        # self.stack.setCurrentWidget(self.page2)
-        print("This would switch to Page 2")
+        self.stack.setCurrentWidget(self.page2)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
