@@ -7,7 +7,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("test screen")
+        self.setWindowTitle("timers")
         self.setGeometry(200, 50, 1500, 1000)
 
         self.central_widget = QWidget()
