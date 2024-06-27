@@ -1,4 +1,4 @@
-#this is for Jake and I. test screen.
+# this is for Jake and I. test screen.
 from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
 from PyQt5.QtCore import QTimer, Qt
 
@@ -39,8 +39,10 @@ class PageTwo(QWidget):
     
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
+
         self.layout.addWidget(self.timer2_label)
         self.layout.addWidget(self.start_button2)
+
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
 
@@ -54,9 +56,6 @@ class PageTwo(QWidget):
         self.timer1.timeout.connect(self.update_timer1)
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
-
-#        text_1 = QLabel('test string')
-#        text_2 = QLabel('test string 2')
 
     def start_timer1(self):
         self.timer1.start(1000)  
@@ -90,3 +89,5 @@ class PageTwo(QWidget):
             self.timer3.stop()
             self.timer3_label.setText("Timer 3: Time's up!")
             self.timer3_time = 15 
+
+app.exec_()
