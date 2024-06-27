@@ -1,10 +1,14 @@
 # this is for Jake and I. test screen.
+
+import sys
+
 from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
 from PyQt5.QtCore import QTimer, Qt
 
 class PageTwo(QWidget):
-    def __init__(self):
+    def __init__(self, on_start_clicked):
         super().__init__()
+        self.on_start_clicked = on_start_clicked
         self.initUI()
 
     def initUI(self):
@@ -90,4 +94,7 @@ class PageTwo(QWidget):
             self.timer3_label.setText("Timer 3: Time's up!")
             self.timer3_time = 15 
 
-app.exec_()
+#    page_two = PageTwo(on_start_clicked=start_clicked)
+#    page_two.show()
+
+#     sys.exit(app.exec_())
