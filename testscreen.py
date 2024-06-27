@@ -94,7 +94,7 @@ class PageTwo(QWidget):
             self.timer3_label.setText("Timer 3: Time's up!")
             self.timer3_time = 15 
 
-   page_two = PageTwo(on_start_clicked = start_clicked)
-   page_two.show()
+    page_two = PageTwo(on_start_clicked = start_clicked)
+    page_two.show()
 
-   sys.exit(app.exec_())
+    sys.exit(app.exec_())
