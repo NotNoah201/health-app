@@ -33,12 +33,19 @@ class PageTwo(QWidget):
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
 
+        
+        text_1 = QLabel('test string')
+        text_2 = QLabel('test string 2')
+    
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
         self.layout.addWidget(self.timer2_label)
         self.layout.addWidget(self.start_button2)
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
+
+        self.layout.addWidget(text_1)
+        self.layout.addWidget(text_2)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
@@ -48,8 +55,8 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
 
-        text_1 = QLabel('test string')
-        text_2 = QLabel('test string 2')
+#        text_1 = QLabel('test string')
+#        text_2 = QLabel('test string 2')
 
     def start_timer1(self):
         self.timer1.start(1000)  
