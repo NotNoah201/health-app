@@ -24,6 +24,7 @@ class PageOne(QWidget):
         self.on_start_clicked = on_start_clicked
         self.initUI()
         gif_player = GifPlayer()
+        
 
 
     def initUI(self):

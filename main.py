@@ -3,11 +3,19 @@ import sys
 from instuctions import PageOne
 from testscreen import PageTwo
 from Results import PageThree
+from PyQt5.QtGui import QPalette, QBrush, QPixmap
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
+        self.set_background_image("./images/background2.png")
+    def set_background_image(self, image_path):
+        oImage = QPixmap(image_path)
+        sImage = oImage.scaled(self.size())  # Scaled to window size
+        palette = QPalette()
+        palette.setBrush(QPalette.Window, QBrush(sImage))
+        self.setPalette(palette)
 
     def initUI(self):
         self.setWindowTitle("Main Window")
