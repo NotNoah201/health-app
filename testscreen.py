@@ -1,8 +1,5 @@
-# this is for Jake and I. test screen.
-
 import sys
-
-from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
 from PyQt5.QtCore import QTimer, Qt
 
 class PageTwo(QWidget):
@@ -37,10 +34,9 @@ class PageTwo(QWidget):
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
 
-        
         text_1 = QLabel('test string')
         text_2 = QLabel('test string 2')
-    
+
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
 
@@ -92,9 +88,15 @@ class PageTwo(QWidget):
         if self.timer3_time <= 0:
             self.timer3.stop()
             self.timer3_label.setText("Timer 3: Time's up!")
-            self.timer3_time = 15 
+            self.timer3_time = 15
 
-    page_two = PageTwo(on_start_clicked = on_start_clicked)
+def main():
+    app = QApplication(sys.argv)
+
+    def on_start_clicked():
+        print("Start button clicked!")
+
+    page_two = PageTwo(on_start_clicked)
     page_two.show()
 
     sys.exit(app.exec_())
