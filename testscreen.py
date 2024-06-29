@@ -14,6 +14,9 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
+        text_1 = QLabel('test string')
+        text_2 = QLabel('test string 2')
+
         self.timer1_time = 15
         self.timer2_time = 45
         self.timer3_time = 15
@@ -33,9 +36,6 @@ class PageTwo(QWidget):
         self.start_button1.clicked.connect(self.start_timer1)
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
-
-        text_1 = QLabel('test string')
-        text_2 = QLabel('test string 2')
 
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
