@@ -1,5 +1,6 @@
 #this is for Jake and I. test screen.
 from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QTimer, Qt
 
 class PageTwo(QWidget):
@@ -80,3 +81,5 @@ class PageTwo(QWidget):
             self.timer3.stop()
             self.timer3_label.setText("Timer 3: Time's up!")
             self.timer3_time = 15 
+
+
