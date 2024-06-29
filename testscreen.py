@@ -49,6 +49,9 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
 
+        text_1 = QLabel('test string')
+        text_2 = QLabel('test string 2')
+
     def start_timer1(self):
         self.timer1.start(1000)  
 
