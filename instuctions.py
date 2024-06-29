@@ -3,11 +3,29 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QPushButton, QVBoxLayout, QLabel, QHBoxLayout, QApplication
 from PyQt5.QtGui import QMovie
 
+class GifPlayer(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("GIF Player")
+        self.setGeometry(100, 100, 800, 600)
+        self.label = QLabel(self)
+        self.label.setAlignment(Qt.AlignCenter)
+        gif_path = "./images/icons8-pulse.gif"
+        self.movie = QMovie(gif_path)
+        self.label.setMovie(self.movie)
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        self.setLayout(layout)
+        self.movie.start()
 class PageOne(QWidget):
     def __init__(self, on_start_clicked):
         super().__init__()
         self.on_start_clicked = on_start_clicked
         self.initUI()
+        gif_player = GifPlayer()
+        
+
 
     def initUI(self):
         self.setWindowTitle("Health")
@@ -36,7 +54,8 @@ class PageOne(QWidget):
 
         self.gif_label.setMovie(self.movie)
         self.movie.start()
-
+        gif_player = GifPlayer()
+        gif_player.show()
         vertical = QVBoxLayout()
         horizontal = QHBoxLayout()
 
@@ -52,21 +71,6 @@ class PageOne(QWidget):
 
         self.setLayout(vertical)
 
-class GifPlayer(QWidget):
-    def __init__(self):
-        super().__init__()
-
-        self.setWindowTitle("GIF Player")
-        self.setGeometry(100, 100, 800, 600)
-        self.label = QLabel(self)
-        self.label.setAlignment(Qt.AlignCenter)
-        gif_path = "./images/icons8-pulse.gif"
-        self.movie = QMovie(gif_path)
-        self.label.setMovie(self.movie)
-        layout = QVBoxLayout()
-        layout.addWidget(self.label)
-        self.setLayout(layout)
-        self.movie.start()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
