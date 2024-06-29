@@ -56,6 +56,10 @@ class PageTwo(QWidget):
         self.timer1.timeout.connect(self.update_timer1)
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
+        
+        button = QPushButton('Send results')
+        button.clicked.connect(self.on_start_clicked)
+        self.layout.addWidget(button)
 
     def start_timer1(self):
         self.timer1.start(1000)  
