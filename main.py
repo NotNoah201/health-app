@@ -23,7 +23,7 @@ class MainWindow(QWidget):
 
         self.stack = QStackedWidget(self)
         self.page1 = PageOne(self.go_to_page2)
-        self.page2 = PageTwo()
+        self.page2 = PageTwo(self.go_to_page3)
         self.page3 = PageThree()
 
         self.stack.addWidget(self.page1)
