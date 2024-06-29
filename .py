@@ -130,9 +130,4 @@ class MainWindow(QMainWindow):
         self.background_label.setPixmap(self.pixmap)
         super().resizeEvent(event)
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec_())
 
