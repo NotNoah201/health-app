@@ -1,9 +1,14 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout
+from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QApplication
+import sys
 
 class PageThree(QWidget):
-    def __init__(self):
+    def __init__(self, p1, p2, p3, age):
         super().__init__()
+        self.p1 = p1
+        self.p2 = p2
+        self.p3 = p3
+        self.age = age
         self.initUI()
 
     def initUI(self):
@@ -14,15 +19,21 @@ class PageThree(QWidget):
         text1 = QLabel('RESULTS:', self)
         text1.setAlignment(Qt.AlignCenter)
 
+        ruffier_score = evaluate_expression(self.p1, self.p2, self.p3)
+        interpretation = get(self.age, ruffier_score)
+
+        text2 = QLabel(f'Ruffier Score: {ruffier_score:.2f}', self)
+        text2.setAlignment(Qt.AlignCenter)
+
+        text3 = QLabel(f'Interpretation: {interpretation}', self)
+        text3.setAlignment(Qt.AlignCenter)
+
         vertical_layout = QVBoxLayout()
         vertical_layout.addWidget(text1, alignment=Qt.AlignCenter)
+        vertical_layout.addWidget(text2, alignment=Qt.AlignCenter)
+        vertical_layout.addWidget(text3, alignment=Qt.AlignCenter)
 
         self.setLayout(vertical_layout)
-
-p1 = 50
-p2 = 50
-p3 = 50
-age = 30
 
 def evaluate_expression(p1, p2, p3):
     return (4 * (p1 + p2 + p3) - 200) / 10
@@ -55,8 +66,10 @@ ScoreInterpret = {(15,100): {(15,100): "Low",
                              }
 
 def get(AGE, RuffierScore):
-    for ageRange in ScoreInterpret.key():
-        if ageRange[0]<AGE<ageRange[1]:
-            for RuffierRange in ScoreInterpret[ageRange].key():
+    for ageRange in ScoreInterpret.keys():
+        if ageRange[0]<=AGE<=ageRange[1]:
+            for RuffierRange in ScoreInterpret[ageRange].keys():
                 if RuffierRange[0]<RuffierScore<RuffierRange[1]:
                     return ScoreInterpret[ageRange][RuffierRange]
+            return "Age or score out of range"
+        
