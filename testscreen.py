@@ -18,10 +18,15 @@ class PageTwo(QWidget):
         text_2 = QLabel('Perform 30 squats in 45 seconds. when you start, click the "timer" button.write down the result in the box below.')
         text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "timer".')
 
+        self.name = QLineEdit('Name?')
+
         self.input_1 = QLineEdit('Input first measurement.')
         self.input_2 = QLineEdit('Input second measurement.')
         self.input_3 = QLineEdit('Input third measurement.')
-        self.input_4 = QLineEdit('Input forth measurement')
+        self.input_4 = QLineEdit('Input forth measurement.')
+
+        self.name.setAlignment(Qt.AlignCenter)
+
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
         text_3.setAlignment(Qt.AlignCenter)
@@ -78,12 +83,13 @@ class PageTwo(QWidget):
         pulse_3 = self.input_3.text()
         
         button = QPushButton('Send results')
-        button.clicked.connect(self.clicked_move)
+        button.clicked.connect(self.clicked_move(pulse_1, pulse_2, pulse_3))
         self.layout.addWidget(button)
         
-    def clicked_move(self):
+    def clicked_move(self, pulse_1, pulse_2, pulse_3):
         #print(self.input_1.text())
-        self.on_start_clicked()
+        if pulse_1 != '' and pulse_2 != '' and pulse_3 != '':
+            self.on_start_clicked(pulse_1, pulse_2, pulse_3)
 
     def start_timer1(self):
         self.timer1.start(1000)  
