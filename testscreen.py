@@ -72,6 +72,10 @@ class PageTwo(QWidget):
         self.timer1.timeout.connect(self.update_timer1)
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
+
+        pulse_1 = self.input_1.text()
+        pulse_2 = self.input_2.text()
+        pulse_3 = self.input_3.text()
         
         button = QPushButton('Send results')
         button.clicked.connect(self.clicked_move)
