@@ -16,6 +16,8 @@ class PageTwo(QWidget):
 
         text_1 = QLabel('test string')
         text_2 = QLabel('test string 2')
+        text_1.setAlignment(Qt.AlignCenter)
+        text_2.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
