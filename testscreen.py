@@ -14,9 +14,9 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('Rest for 15 seconds. Take your pulse.')
-        text_2 = QLabel('Exercise for 45 seconds. Take your pulse.')
-        text_3 = QLabel('Rest for 15 seconds. Take your pulse.')
+        text_1 = QLabel('lie on your back and take your pulse for 15 seconds. click the "timer" button to start the timer. write down the result in the box below.')
+        text_2 = QLabel('preform 30 squats in 45 seconds. when you start, click the "timer" button.write down the result in the box below.')
+        text_3 = QLabel('lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "timer".')
 
         self.input_1 = QLineEdit('Input first measurement.')
         self.input_2 = QLineEdit('Input second measurement.')
@@ -32,19 +32,19 @@ class PageTwo(QWidget):
 
         self.timer1_time = 15
         self.timer2_time = 45
-        self.timer3_time = 15
+        self.timer3_time = 60
 
         self.timer1_label = QLabel("Timer 1: 15 seconds", self)
         self.timer2_label = QLabel("Timer 2: 45 seconds", self)
-        self.timer3_label = QLabel("Timer 3: 15 seconds", self)
+        self.timer3_label = QLabel("Timer 3: 60 seconds", self)
 
         self.timer1_label.setAlignment(Qt.AlignCenter)
         self.timer2_label.setAlignment(Qt.AlignCenter)
         self.timer3_label.setAlignment(Qt.AlignCenter)
 
-        self.start_button1 = QPushButton("Start Timer 1", self)
-        self.start_button2 = QPushButton("Start Timer 2", self)
-        self.start_button3 = QPushButton("Start Timer 3", self)
+        self.start_button1 = QPushButton("Start test 1", self)
+        self.start_button2 = QPushButton("Start test 2", self)
+        self.start_button3 = QPushButton("Start test 3", self)
 
         self.start_button1.clicked.connect(self.start_timer1)
         self.start_button2.clicked.connect(self.start_timer2)
@@ -112,7 +112,7 @@ class PageTwo(QWidget):
         if self.timer3_time <= 0:
             self.timer3.stop()
             self.timer3_label.setText("Timer 3: Time's up!")
-            self.timer3_time = 15
+            self.timer3_time = 60
 
 def main():
     app = QApplication(sys.argv)
