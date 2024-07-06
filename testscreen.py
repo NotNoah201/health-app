@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import QTimer, Qt
 
 class PageTwo(QWidget):
@@ -18,9 +18,17 @@ class PageTwo(QWidget):
         text_2 = QLabel('Exercise for 45 seconds. Take your pulse.')
         text_3 = QLabel('Rest for 15 seconds. Take your pulse.')
 
+        input_1 = QLineEdit(getInt('Input first measurement.'))
+        input_2 = QLineEdit(getInt('Input second measurement.'))
+        input_3 = QLineEdit(getInt('Input third measurement.'))
+
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
         text_3.setAlignment(Qt.AlignCenter)
+
+        input_1.setAlignment(Qt.AlignCenter)
+        input_2.setAlignment(Qt.AlignCenter)
+        input_3.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
@@ -45,14 +53,17 @@ class PageTwo(QWidget):
         self.layout.addWidget(text_1)
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
+        self.layout.addWidget(input_1)
 
         self.layout.addWidget(text_2)
         self.layout.addWidget(self.timer2_label)
         self.layout.addWidget(self.start_button2)
+        self.layout.addWidget(input_2)
 
         self.layout.addWidget(text_3)
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
+        self.layout.addWidget(input_3)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
