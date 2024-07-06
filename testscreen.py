@@ -14,9 +14,9 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('lie on your back and take your pulse for 15 seconds. click the "timer" button to start the timer. write down the result in the box below.')
-        text_2 = QLabel('preform 30 squats in 45 seconds. when you start, click the "timer" button.write down the result in the box below.')
-        text_3 = QLabel('lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "timer".')
+        text_1 = QLabel('Lie on your back and take your pulse for 15 seconds. click the "timer" button to start the timer. write down the result in the box below.')
+        text_2 = QLabel('Perform 30 squats in 45 seconds. when you start, click the "timer" button.write down the result in the box below.')
+        text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "timer".')
 
         self.input_1 = QLineEdit('Input first measurement.')
         self.input_2 = QLineEdit('Input second measurement.')
@@ -72,6 +72,10 @@ class PageTwo(QWidget):
         self.timer1.timeout.connect(self.update_timer1)
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
+
+        pulse_1 = self.input_1.text()
+        pulse_2 = self.input_2.text()
+        pulse_3 = self.input_3.text()
         
         button = QPushButton('Send results')
         button.clicked.connect(self.clicked_move)
