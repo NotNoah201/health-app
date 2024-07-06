@@ -64,6 +64,14 @@ ScoreInterpret = {(15,100): {(15,100): "Low",
                                (6.5,11.9): "Above Average",
                                (0,6.4): "High"},
                              }
+imageInterpretation = {("low"):'./images/skinnyguy.jpeg',
+                       ("satisfactory"):'./images/THUMBS-up.webp',
+                       ("Average"):'./images/meh.jpeg',
+                       ("Above Average"):'./images/turt.jpeg',
+                       ("High"):'./images/NOOO.jpeg'
+                      
+}
+
 
 def get(AGE, RuffierScore):
     for ageRange in ScoreInterpret.keys():
