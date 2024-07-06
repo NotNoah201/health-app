@@ -18,9 +18,9 @@ class PageTwo(QWidget):
         text_2 = QLabel('Exercise for 45 seconds. Take your pulse.')
         text_3 = QLabel('Rest for 15 seconds. Take your pulse.')
 
-        input_1 = QLineEdit(getInt('Input first measurement.'))
-        input_2 = QLineEdit(getInt('Input second measurement.'))
-        input_3 = QLineEdit(getInt('Input third measurement.'))
+        input_1 = QLineEdit('Input first measurement.')
+        input_2 = QLineEdit('Input second measurement.')
+        input_3 = QLineEdit('Input third measurement.')
 
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
