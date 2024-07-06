@@ -36,7 +36,7 @@ class PageThree(QWidget):
         self.setLayout(vertical_layout)
 
 def evaluate_expression(p1, p2, p3):
-    return (4 * (p1 + p2 + p3) - 200) / 10
+    return (4 * (int(p1) + int(p2) + int(p3)) - 200) / 10
 
 ScoreInterpret = {(15,100): {(15,100): "Low",
                              (11,14.9): "Satisfactory",

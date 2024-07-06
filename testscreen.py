@@ -20,16 +20,9 @@ class PageTwo(QWidget):
 
         self.name = QLineEdit('Name?')
 
-        self.input_1 = QLineEdit('Input first measurement.')
-        self.input_2 = QLineEdit('Input second measurement.')
-        self.input_3 = QLineEdit('Input third measurement.')
-<<<<<<< HEAD
-        self.input_4 = QLineEdit('Input forth measurement.')
-
-        self.name.setAlignment(Qt.AlignCenter)
-
-=======
->>>>>>> f4327469ae9796820304016f0dabd1df48bb7520
+        self.input_1 = QLineEdit('1')
+        self.input_2 = QLineEdit('2')
+        self.input_3 = QLineEdit('3')
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
         text_3.setAlignment(Qt.AlignCenter)
@@ -81,8 +74,12 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
         
+        self.pulse1 = self.input_1.text()
+        self.pulse2 = self.input_2.text()
+        self.pulse3 = self.input_3.text()
+        
         button = QPushButton('Send results')
-        button.clicked.connect(self.clicked_move(pulse_1, pulse_2, pulse_3))
+        button.clicked.connect(self.clicked_move(self.pulse1, self.pulse2, self.pulse3))
         self.layout.addWidget(button)
         
     def clicked_move(self, pulse_1, pulse_2, pulse_3):
