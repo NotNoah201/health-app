@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
-=======
-#this is for Jake and I. test screen.
-from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QVBoxLayout
-from PyQt5.QtGui import QPixmap
->>>>>>> daa22376c0bcddb58fa79cda7e588e5b34cf45b2
 from PyQt5.QtCore import QTimer, Qt
 
 class PageTwo(QWidget):
@@ -19,6 +13,11 @@ class PageTwo(QWidget):
         self.setGeometry(200, 50, 1500, 1000)
 
         self.layout = QVBoxLayout(self)
+
+        text_1 = QLabel('test string')
+        text_2 = QLabel('test string 2')
+        text_1.setAlignment(Qt.AlignCenter)
+        text_2.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
@@ -40,9 +39,6 @@ class PageTwo(QWidget):
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
 
-        text_1 = QLabel('test string')
-        text_2 = QLabel('test string 2')
-
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
 
@@ -62,6 +58,10 @@ class PageTwo(QWidget):
         self.timer1.timeout.connect(self.update_timer1)
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
+        
+        button = QPushButton('Send results')
+        button.clicked.connect(self.on_start_clicked)
+        self.layout.addWidget(button)
 
     def start_timer1(self):
         self.timer1.start(1000)  
@@ -94,7 +94,6 @@ class PageTwo(QWidget):
         if self.timer3_time <= 0:
             self.timer3.stop()
             self.timer3_label.setText("Timer 3: Time's up!")
-<<<<<<< HEAD
             self.timer3_time = 15
 
 def main():
@@ -107,8 +106,3 @@ def main():
     page_two.show()
 
     sys.exit(app.exec_())
-=======
-            self.timer3_time = 15 
-
-
->>>>>>> daa22376c0bcddb58fa79cda7e588e5b34cf45b2

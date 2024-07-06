@@ -18,13 +18,36 @@ class GifPlayer(QWidget):
         layout.addWidget(self.label)
         self.setLayout(layout)
         self.movie.start()
+        
 class PageOne(QWidget):
     def __init__(self, on_start_clicked):
         super().__init__()
         self.on_start_clicked = on_start_clicked
         self.initUI()
         gif_player = GifPlayer()
-
+        
+    def UiComponents(self): 
+  
+        # creating label 
+        label = QLabel("Label", self) 
+  
+        # setting alignment 
+        label.setAlignment(Qt.AlignCenter) 
+  
+        # setting geometry to the label 
+        label.setGeometry(200, 150, 200, 80) 
+  
+        # setting border 
+        label.setStyleSheet("border : 10px solid black") 
+  
+        # creating a QGraphicsDropShadowEffect object 
+        shadow = QGraphicsDropShadowEffect() 
+  
+        # setting blur radius 
+        shadow.setBlurRadius(15) 
+  
+        # adding shadow to the label 
+        label.setGraphicsEffect(shadow) 
 
     def initUI(self):
         self.setWindowTitle("Health")
