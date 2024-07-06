@@ -14,10 +14,13 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('test string')
-        text_2 = QLabel('test string 2')
+        text_1 = QLabel('Rest for 15 seconds. Take your pulse.')
+        text_2 = QLabel('Exercise for 45 seconds. Take your pulse.')
+        text_3 = QLabel('Rest for 15 seconds. Take your pulse.')
+
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
+        text_3.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
@@ -50,6 +53,7 @@ class PageTwo(QWidget):
 
         self.layout.addWidget(text_1)
         self.layout.addWidget(text_2)
+        self.layout.addWidget(text_3)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
