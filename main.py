@@ -23,7 +23,7 @@ class MainWindow(QWidget):
 
         self.stack = QStackedWidget(self)
         self.page1 = PageOne(self.go_to_page2)
-        self.page2 = PageTwo(self.go_to_page3)
+        self.page2 = PageTwo(self.go_to_page3(pulse_1, pulse_2, pulse_3))
 
         self.stack.addWidget(self.page1)
         self.stack.addWidget(self.page2)
@@ -36,8 +36,8 @@ class MainWindow(QWidget):
     def go_to_page2(self):
         self.stack.setCurrentWidget(self.page2)
         
-    def go_to_page3(self):
-        self.page3 = PageThree(50, 50, 50, 10)
+    def go_to_page3(self, pulse_1, pulse_2, pulse_3):
+        self.page3 = PageThree(pulse_1, pulse_2, pulse_3, 10)
         self.stack.addWidget(self.page3)
         self.stack.setCurrentWidget(self.page3)
 
