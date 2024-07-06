@@ -35,12 +35,6 @@ class PageThree(QWidget):
 
         self.setLayout(vertical_layout)
 
-p1 = 50
-p2 = 50
-p3 = 50
-age = 30
-
-
 def evaluate_expression(p1, p2, p3):
     return (4 * (p1 + p2 + p3) - 200) / 10
 
@@ -79,12 +73,3 @@ def get(AGE, RuffierScore):
                     return ScoreInterpret[ageRange][RuffierRange]
             return "Age or score out of range"
         
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    p1 = 50
-    p2 = 50
-    p3 = 50
-    age = 30
-    page = PageThree(p1, p2, p3, age)
-    page.show()
-    sys.exit(app.exec_())
