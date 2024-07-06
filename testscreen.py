@@ -42,18 +42,17 @@ class PageTwo(QWidget):
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
 
+        self.layout.addWidget(text_1)
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
 
+        self.layout.addWidget(text_2)
         self.layout.addWidget(self.timer2_label)
         self.layout.addWidget(self.start_button2)
 
+        self.layout.addWidget(text_3)
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
-
-        self.layout.addWidget(text_1)
-        self.layout.addWidget(text_2)
-        self.layout.addWidget(text_3)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
