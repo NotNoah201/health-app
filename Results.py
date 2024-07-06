@@ -57,7 +57,6 @@ ScoreInterpret = {(15,100): {(15,100): "Low",
 def get(AGE, RuffierScore):
     for ageRange in ScoreInterpret.key():
         if ageRange[0]<AGE<ageRange[1]:
-    for RuffierRange in ScoreInterpret[ageRange].key():
-        if RuffierRange[0]<RuffierScore<RuffierRange[1]:
-        
-        return ScoreInterpret[ageRange][RuffierRange]
+            for RuffierRange in ScoreInterpret[ageRange].key():
+                if RuffierRange[0]<RuffierScore<RuffierRange[1]:
+                    return ScoreInterpret[ageRange][RuffierRange]
