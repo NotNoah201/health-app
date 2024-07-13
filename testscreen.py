@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import QTimer, Qt
+from PyQt5.QtGui import QFont
 
 class PageTwo(QWidget):
     def __init__(self, on_start_clicked):
@@ -14,10 +15,14 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('lie on your back and take your pulse for 15 seconds. click the "start test 1" button to start the timer. write down the result in the box below.')
-        text_2 = QLabel('preform 30 squats in 45 seconds. when you start, click the "start test 2" button.write down the result in the box below.')
-        text_3 = QLabel('lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "start test 3" write down results for first 15 seconds in the box below. then the results for the last 15 seconds in the box below that.')
-
+      
+        text_1 = QLabel('Lie on your back and take your pulse for 15 seconds. Click the "Start test 1" button to start the timer. Write down the result in the box below.')
+        text_2 = QLabel('Perform 30 squats in 45 seconds. When you start, click the "Start test 2" button. \nWrite down the result in the box below.')
+        text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. \nClick the "start test 3" write down results for first 15 seconds in the box below, then the results for the last 15 seconds in the box below that.')
+        text_1.setFont(QFont('Alore', 10))  
+        text_2.setFont(QFont('Alore', 10))  
+        text_3.setFont(QFont('Alore', 10))  
+        
         self.name = QLineEdit('Name?')
 
         self.input_1 = QLineEdit('1')
