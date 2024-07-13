@@ -78,14 +78,16 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
         
+        self.pulse1 = int(self.input_1.text())
+        self.pulse2 = int(self.input_2.text())
+        self.pulse3 = int(self.input_3.text())
+        
         button = QPushButton('Send results')
-        button.clicked.connect(self.clicked_move(pulse_1, pulse_2, pulse_3))
+        button.clicked.connect(self.clicked_move)
         self.layout.addWidget(button)
         
-    def clicked_move(self, pulse_1, pulse_2, pulse_3):
-        #print(self.input_1.text())
-        if pulse_1 != '' and pulse_2 != '' and pulse_3 != '':
-            self.on_start_clicked(pulse_1, pulse_2, pulse_3)
+    def clicked_move(self):
+        self.on_start_clicked(self.pulse1, self.pulse2, self.pulse3)
 
     def start_timer1(self):
         self.timer1.start(1000)  

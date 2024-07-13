@@ -36,7 +36,7 @@ class PageThree(QWidget):
         self.setLayout(vertical_layout)
 
 def evaluate_expression(p1, p2, p3):
-    return (4 * (p1 + p2 + p3) - 200) / 10
+    return (4 * (int(p1) + int(p2) + int(p3)) - 200) / 10
 
 ScoreInterpret = {(15,100): {(15,100): "Low",
                              (11,14.9): "Satisfactory",
@@ -64,6 +64,14 @@ ScoreInterpret = {(15,100): {(15,100): "Low",
                                (6.5,11.9): "Above Average",
                                (0,6.4): "High"},
                              }
+imageInterpretation = {("low"):'./images/skinnyguy.jpeg',
+                       ("satisfactory"):'./images/THUMBS-up.webp',
+                       ("Average"):'./images/meh.jpeg',
+                       ("Above Average"):'./images/turt.jpeg',
+                       ("High"):'./images/NOOO.jpeg'
+                      
+}
+
 
 def get(AGE, RuffierScore):
     for ageRange in ScoreInterpret.keys():
