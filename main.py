@@ -37,7 +37,7 @@ class MainWindow(QWidget):
         self.stack.setCurrentWidget(self.page2)
         
     def go_to_page3(self, pulse_1, pulse_2, pulse_3):
-        self.page3 = PageThree(pulse_1, pulse_2, pulse_3, 10)
+        self.page3 = PageThree(pulse_1, pulse_2, pulse_3, 14)
         self.stack.addWidget(self.page3)
         self.stack.setCurrentWidget(self.page3)
 
