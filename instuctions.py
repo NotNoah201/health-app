@@ -41,12 +41,7 @@ class PageOne(QWidget):
         text1.setFont(QFont('Alore', 20))  
         text1.setAlignment(Qt.AlignCenter)
         text2 = QLabel("This application allows you to use the Rufier test to make an initial diagnosis of your health.\n")
-        text3 = QLabel("The Rufier test is a set of physical exercises designed to assess your cardiac performance during physical exertion.\n"
-                        "The subject lies in the supine position for 5 minutes and has their pulse rate measured for 15 seconds;\n"
-                        "then, within 45 seconds, the subject performs 30 squats.\n"
-                        "When the exercise ends, the subject lies down and their pulse is measured again for the first 15 seconds\n"
-                        "and then for the last 15 seconds of the first minute of the recovery period.\n"
-                        "Important! If you feel unwell during the test (dizziness, tinnitus, shortness of breath, etc.), stop the test and consult a physician.")
+        text3 = QLabel("The Rufier test is a set of physical exercises designed to assess your cardiac performance during physical exertion.\nThe subject lies in the supine position for 5 minutes and has their pulse rate measured for 15 seconds;\nthen, within 45 seconds, the subject performs 30 squats.\nWhen the exercise ends, the subject lies down and their pulse is measured again for the first 15 seconds\nand then for the last 15 seconds of the first minute of the recovery period.\nImportant! If you feel unwell during the test (dizziness, tinnitus, shortness of breath, etc.), stop the test and consult a physician.")
         text3.setFont(QFont('Aria', 10))  
         shadow = QGraphicsDropShadowEffect() 
         shadow.setBlurRadius(15) 
