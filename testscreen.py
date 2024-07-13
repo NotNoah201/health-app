@@ -20,10 +20,10 @@ class PageTwo(QWidget):
 
         self.name = QLineEdit('Name?')
 
-        self.input_1 = QLineEdit('Input first measurement.')
-        self.input_2 = QLineEdit('Input second measurement.')
-        self.input_3 = QLineEdit('Input third measurement.')
-        self.input_4 = QLineEdit('Input forth measurement.')
+        self.input_1 = QLineEdit('1')
+        self.input_2 = QLineEdit('2')
+        self.input_3 = QLineEdit('3')
+        self.input_4 = QLineEdit('4')
 
         self.name.setAlignment(Qt.AlignCenter)
 
