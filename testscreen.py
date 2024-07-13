@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import QTimer, Qt
+from PyQt5.QtGui import QFont
 
 class PageTwo(QWidget):
     def __init__(self, on_start_clicked):
@@ -24,6 +25,10 @@ class PageTwo(QWidget):
         self.age = QLineEdit('5')
 
         self.name.setAlignment(Qt.AlignCenter)
+        
+        self.text_1 = QLabel('Lie on your back and take your pulse for 15 seconds. Click the "Start test 1" button to start the timer. Write down the result in the box below.')
+        self.text_2 = QLabel('Perform 30 squats in 45 seconds. When you start, click the "Start test 2" button. \nWrite down the result in the box below.')
+        self.text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. \nClick the "start test 3" write down results for first 15 seconds in the box below, then the results for the last 15 seconds in the box below that.')
 
         self.text_1.setAlignment(Qt.AlignCenter)
         self.text_2.setAlignment(Qt.AlignCenter)
@@ -59,17 +64,17 @@ class PageTwo(QWidget):
         self.start_button2.clicked.connect(self.start_timer2)
         self.start_button3.clicked.connect(self.start_timer3)
 
-        self.layout.addWidget(text_1)
+        self.layout.addWidget(self.text_1)
         self.layout.addWidget(self.timer1_label)
         self.layout.addWidget(self.start_button1)
         self.layout.addWidget(self.input_1)
 
-        self.layout.addWidget(text_2)
+        self.layout.addWidget(self.text_2)
         self.layout.addWidget(self.timer2_label)
         self.layout.addWidget(self.start_button2)
         self.layout.addWidget(self.input_2)
 
-        self.layout.addWidget(text_3)
+        self.layout.addWidget(self.text_3)
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
         self.layout.addWidget(self.input_3)
@@ -89,8 +94,10 @@ class PageTwo(QWidget):
         self.layout.addWidget(button)
         
     def clicked_move(self):
-        #print(self.input_1.text())
-        self.on_start_clicked()
+        self.pulse1 = int(self.input_1.text())
+        self.pulse2 = int(self.input_2.text())
+        self.pulse3 = int(self.input_3.text())
+        self.on_start_clicked(self.pulse1, self.pulse2, self.pulse3)
 
     def start_timer1(self):
         self.timer1.start(1000)  
