@@ -19,7 +19,7 @@ class MainWindow(QWidget):
 
     def initUI(self):
         self.setWindowTitle("Main Window")
-        self.resize(1000, 900)
+        self.resize(2000, 1050)
 
         self.stack = QStackedWidget(self)
         self.page1 = PageOne(self.go_to_page2)
