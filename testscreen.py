@@ -14,22 +14,30 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('lie on your back and take your pulse for 15 seconds. click the "start test 1" button to start the timer. write down the result in the box below.')
-        text_2 = QLabel('preform 30 squats in 45 seconds. when you start, click the "start test 2" button.write down the result in the box below.')
-        text_3 = QLabel('lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. click the "start test 3" write down results for first 15 seconds in the box below. then the results for the last 15 seconds in the box below that.')
-
-        
+        self.name = QLineEdit('Name?')
 
         self.input_1 = QLineEdit('1')
         self.input_2 = QLineEdit('2')
         self.input_3 = QLineEdit('3')
-        text_1.setAlignment(Qt.AlignCenter)
-        text_2.setAlignment(Qt.AlignCenter)
-        text_3.setAlignment(Qt.AlignCenter)
+        #self.input_4 = QLineEdit('4')
+
+        self.age = QLineEdit('5')
+
+        self.name.setAlignment(Qt.AlignCenter)
+
+        self.text_1.setAlignment(Qt.AlignCenter)
+        self.text_2.setAlignment(Qt.AlignCenter)
+        self.text_3.setAlignment(Qt.AlignCenter)
+
+        self.text_1.setFont(QFont('Comic Sans MS', 10))
+        self.text_2.setFont(QFont('Comic Sans MS', 10))
+        self.text_3.setFont(QFont('Comic Sans MS', 10))
 
         self.input_1.setAlignment(Qt.AlignCenter)
         self.input_2.setAlignment(Qt.AlignCenter)
         self.input_3.setAlignment(Qt.AlignCenter)
+
+        self.age.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
@@ -65,6 +73,8 @@ class PageTwo(QWidget):
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
         self.layout.addWidget(self.input_3)
+
+        self.layout.addWidget(self.age)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
