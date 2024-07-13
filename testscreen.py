@@ -15,11 +15,6 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-
-        text_1.setFont(QFont('Comic Sans MS', 10))
-        text_2.setFont
-        text_3
-
         self.name = QLineEdit('Name?')
 
         self.input_1 = QLineEdit('1')
@@ -31,9 +26,13 @@ class PageTwo(QWidget):
 
         self.name.setAlignment(Qt.AlignCenter)
 
-        text_1.setAlignment(Qt.AlignCenter)
-        text_2.setAlignment(Qt.AlignCenter)
-        text_3.setAlignment(Qt.AlignCenter)
+        self.text_1.setAlignment(Qt.AlignCenter)
+        self.text_2.setAlignment(Qt.AlignCenter)
+        self.text_3.setAlignment(Qt.AlignCenter)
+
+        self.text_1.setFont(QFont('Comic Sans MS', 10))
+        self.text_2.setFont(QFont('Comic Sans MS', 10))
+        self.text_3.setFont(QFont('Comic Sans MS', 10))
 
         self.input_1.setAlignment(Qt.AlignCenter)
         self.input_2.setAlignment(Qt.AlignCenter)
