@@ -12,14 +12,14 @@ class MainWindow(QWidget):
         self.set_background_image("./images/background2.png")
     def set_background_image(self, image_path):
         oImage = QPixmap(image_path)
-        sImage = oImage.scaled(self.size())  # Scaled to window size
+        sImage = oImage.scaled(self.size())
         palette = QPalette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
         self.setPalette(palette)
 
     def initUI(self):
         self.setWindowTitle("Main Window")
-        self.resize(2000, 1000)
+        self.resize(1000, 900)
 
         self.stack = QStackedWidget(self)
         self.page1 = PageOne(self.go_to_page2)
