@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import QTimer, Qt
+from PyQt5.QtGui import QFont
 
 class PageTwo(QWidget):
     def __init__(self, on_start_clicked):
@@ -18,12 +19,18 @@ class PageTwo(QWidget):
         text_2 = QLabel('Perform 30 squats in 45 seconds. When you start, click the "start test 2" button.write down the result in the box below.')
         text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. Click the "start test 3" write down results for first 15 seconds in the box below, then the results for the last 15 seconds in the box below that.')
 
+        text_1.setFont(QFont('Comic Sans MS', 10))
+        text_2.setFont
+        text_3
+
         self.name = QLineEdit('Name?')
 
         self.input_1 = QLineEdit('1')
         self.input_2 = QLineEdit('2')
         self.input_3 = QLineEdit('3')
-        self.input_4 = QLineEdit('4')
+        #self.input_4 = QLineEdit('4')
+
+        self.age = QLineEdit('5')
 
         self.name.setAlignment(Qt.AlignCenter)
 
@@ -34,6 +41,8 @@ class PageTwo(QWidget):
         self.input_1.setAlignment(Qt.AlignCenter)
         self.input_2.setAlignment(Qt.AlignCenter)
         self.input_3.setAlignment(Qt.AlignCenter)
+
+        self.age.setAlignment(Qt.AlignCenter)
 
         self.timer1_time = 15
         self.timer2_time = 45
@@ -69,6 +78,8 @@ class PageTwo(QWidget):
         self.layout.addWidget(self.timer3_label)
         self.layout.addWidget(self.start_button3)
         self.layout.addWidget(self.input_3)
+
+        self.layout.addWidget(self.age)
 
         self.timer1 = QTimer(self)
         self.timer2 = QTimer(self)
