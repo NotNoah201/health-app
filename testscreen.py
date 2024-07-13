@@ -15,9 +15,6 @@ class PageTwo(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        text_1 = QLabel('Lie on your back and take your pulse for 15 seconds. click the "start test 1" button to start the timer. write down the result in the box below.')
-        text_2 = QLabel('Perform 30 squats in 45 seconds. When you start, click the "start test 2" button.write down the result in the box below.')
-        text_3 = QLabel('Lie on your back and take your pulse for 15 seconds of the minuite, then for the last 15 seconds of the minuite. Click the "start test 3" write down results for first 15 seconds in the box below, then the results for the last 15 seconds in the box below that.')
 
         text_1.setFont(QFont('Comic Sans MS', 10))
         text_2.setFont
@@ -89,15 +86,14 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
         
-        self.pulse1 = int(self.input_1.text())
-        self.pulse2 = int(self.input_2.text())
-        self.pulse3 = int(self.input_3.text())
-        
         button = QPushButton('Send results')
         button.clicked.connect(self.clicked_move)
         self.layout.addWidget(button)
         
     def clicked_move(self):
+        self.pulse1 = int(self.input_1.text())
+        self.pulse2 = int(self.input_2.text())
+        self.pulse3 = int(self.input_3.text())
         self.on_start_clicked(self.pulse1, self.pulse2, self.pulse3)
 
     def start_timer1(self):
