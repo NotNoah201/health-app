@@ -12,7 +12,7 @@ class PageThree(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("RESULTS")
+        self.setWindowTitle("THE RESULTS")
         self.resize(1920, 1080)
         self.move(0, 0)
 
@@ -66,9 +66,9 @@ ScoreInterpret = {(15,100): {(15,100): "Low",
                              }
 imageInterpretation = {"low": './images/skinnyguy.jpeg',
                        "satisfactory": './images/THUMBS-up.webp',
-                       "Average": './images/meh.jpeg',
-                       "Above Average": './images/turt.jpeg',
-                       "High": './images/NOOO.jpeg'
+                       "average": './images/meh.jpeg',
+                       "above Average": './images/turt.jpeg',
+                       "high": './images/NOOO.jpeg'
                       }
 
 
