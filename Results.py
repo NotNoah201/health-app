@@ -1,5 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QApplication
+from PyQt5.QtGui import QPixmap
 import sys
 
 class PageThree(QWidget):
@@ -28,11 +29,20 @@ class PageThree(QWidget):
         text3 = QLabel(f'Interpretation: {interpretation}', self)
         text3.setAlignment(Qt.AlignCenter)
 
+        image_label = QLabel(self)
+        if interpretation in imageInterpretation:
+            pixmap = QPixmap(imageInterpretation[interpretation])
+            image_label.setPixmap(pixmap)
+            image_label.setAlignment(Qt.AlignCenter)
+        else:
+            image_label.setText("No image available")
+            image_label.setAlignment(Qt.AlignCenter)
+
         vertical_layout = QVBoxLayout()
         vertical_layout.addWidget(text1, alignment=Qt.AlignCenter)
         vertical_layout.addWidget(text2, alignment=Qt.AlignCenter)
         vertical_layout.addWidget(text3, alignment=Qt.AlignCenter)
-
+        vertical_layout.addWidget(image_label, alignment=Qt.AlignCenter)
         self.setLayout(vertical_layout)
 
 def evaluate_expression(p1, p2, p3):
@@ -78,5 +88,11 @@ def get(AGE, RuffierScore):
             for RuffierRange in ScoreInterpret[ageRange].keys():
                 if RuffierRange[0]<RuffierScore<RuffierRange[1]:
                     return ScoreInterpret[ageRange][RuffierRange]
-            return "Age or score out of range"
+    return "Age or score out of range"
         
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    p1, p2, p3, age = 20, 30, 40, 12  # Example values
+    ex = PageThree(p1, p2, p3, age)
+    ex.show()
+    sys.exit(app.exec_())
