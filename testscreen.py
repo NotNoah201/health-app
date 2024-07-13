@@ -25,10 +25,10 @@ class PageTwo(QWidget):
         
         self.name = QLineEdit('Name?')
 
-        self.input_1 = QLineEdit('1')
-        self.input_2 = QLineEdit('2')
-        self.input_3 = QLineEdit('3')
-        self.input_4 = QLineEdit('4')
+        self.input_1 = QLineEdit('10')
+        self.input_2 = QLineEdit('20')
+        self.input_3 = QLineEdit('30')
+        self.input_4 = QLineEdit('40')
 
         self.name.setAlignment(Qt.AlignCenter)
 
@@ -83,15 +83,14 @@ class PageTwo(QWidget):
         self.timer2.timeout.connect(self.update_timer2)
         self.timer3.timeout.connect(self.update_timer3)
         
-        self.pulse1 = int(self.input_1.text())
-        self.pulse2 = int(self.input_2.text())
-        self.pulse3 = int(self.input_3.text())
-        
         button = QPushButton('Send results')
         button.clicked.connect(self.clicked_move)
         self.layout.addWidget(button)
         
     def clicked_move(self):
+        self.pulse1 = int(self.input_1.text())
+        self.pulse2 = int(self.input_2.text())
+        self.pulse3 = int(self.input_3.text())
         self.on_start_clicked(self.pulse1, self.pulse2, self.pulse3)
 
     def start_timer1(self):
