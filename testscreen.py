@@ -20,9 +20,9 @@ class PageTwo(QWidget):
 
         self.name = QLineEdit('Name?')
 
-        self.input_1 = QLineEdit('1')
-        self.input_2 = QLineEdit('2')
-        self.input_3 = QLineEdit('3')
+        self.input_1 = QLineEdit('First')
+        self.input_2 = QLineEdit('Second')
+        self.input_3 = QLineEdit('Third')
         text_1.setAlignment(Qt.AlignCenter)
         text_2.setAlignment(Qt.AlignCenter)
         text_3.setAlignment(Qt.AlignCenter)
